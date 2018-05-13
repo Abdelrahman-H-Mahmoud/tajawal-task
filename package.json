@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha **/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/abdelrahmanahmed/tajawal-task#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "hapi": "^17.4.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "expect.js": "^0.3.1",
+    "mocha": "^5.1.1"
   }
 }
