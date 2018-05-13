@@ -1,0 +1,22 @@
+{
+  "name": "tajawal-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelrahmanahmed/tajawal-task.git"
+  },
+  "author": "wahdan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abdelrahmanahmed/tajawal-task/issues"
+  },
+  "homepage": "https://github.com/abdelrahmanahmed/tajawal-task#readme",
+  "dependencies": {
+    "hapi": "^17.4.0"
+  }
+}
