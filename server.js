@@ -13,3 +13,5 @@ server.route(routes);
 server.start();
 
 console.log('Server running in port '+ port);
+
+module.exports = server;
