@@ -10,8 +10,19 @@ const routes = require('./src/routes/web');
 
 server.route(routes);
 
-server.start();
+// Start the server
+async function start() {
 
-console.log('Server running in port '+ port);
+    try {
+        await server.start();
+    }
+    catch (err) {
+        console.log(err);
+        process.exit(1);
+    }
+
+    console.log('Server running at:', server.info.uri);
+}
+start();
 
 module.exports = server;
