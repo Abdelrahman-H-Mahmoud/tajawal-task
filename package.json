@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "lab -c **/*.test.js"
+    "test": "lab -c **/*.test.js",
+    "eslint": "./node_modules/.bin/eslint ."
   },
   "repository": {
     "type": "git",
