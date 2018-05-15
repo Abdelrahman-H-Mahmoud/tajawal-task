@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const api = require('./../config/api');
 
-const fetchHotels = async (request, reply)=>{
+const fetchHotels = async ()=>{
     let hotels = await axios({
         method:'get',
         url:api.url
