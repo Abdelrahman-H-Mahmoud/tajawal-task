@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha **/*.test.js"
+    "test": "lab -c **/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,13 @@
   "homepage": "https://github.com/abdelrahmanahmed/tajawal-task#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "hapi": "^17.4.0"
+    "hapi": "^17.4.0",
+    "joi": "^13.3.0",
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "code": "^5.2.0",
     "eslint": "^4.19.1",
-    "expect.js": "^0.3.1",
-    "mocha": "^5.1.1"
+    "lab": "^15.4.5"
   }
 }
