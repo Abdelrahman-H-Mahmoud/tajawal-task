@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/abdelrahmanahmed/tajawal-task.svg?branch=master)](https://travis-ci.org/abdelrahmanahmed/tajawal-task)
+
 # Description
 This repository is created to fetch hotels data from Tajawal api and apply search and sorting on this data . 
 
