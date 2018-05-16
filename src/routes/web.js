@@ -5,7 +5,7 @@ module.exports = function() {
     return [
         {
             method: 'GET',
-            path: '/',
+            path: '/hotels',
             handler: hotelController.fetchHotels,
             options: {
                 validate: {
