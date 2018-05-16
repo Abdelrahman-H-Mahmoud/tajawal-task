@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/abdelrahmanahmed/tajawal-task.svg?branch=master)](https://travis-ci.org/abdelrahmanahmed/tajawal-task)
+<a href="https://codeclimate.com/github/abdelrahmanahmed/tajawal-task/maintainability"><img src="https://api.codeclimate.com/v1/badges/f9e10d4e020cb90f5a4c/maintainability" /></a>
 
 # Description
 This repository is created to fetch hotels data from Tajawal api and apply search and sorting on this data . 
