@@ -1,8 +1,8 @@
-const {expect} = require('code') ,
-    Lab = require('lab') ,     
-    lab = exports.lab = Lab.script(),
-    server = require('../server.js'),
-    hotelData = require('./hotelData');
+//const {expect} = require('code') ,
+const Lab = require('lab') ,     
+    lab = exports.lab = Lab.script();
+//   server = require('../server.js'),
+// hotelData = require('./hotelData');
 
 lab.experiment('Filter Hotels', function() {
         
