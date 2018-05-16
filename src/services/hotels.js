@@ -36,17 +36,17 @@ const filterHotels = (data , criterias)=>{
             return element['city'].toLowerCase() === criterias['city'].toLowerCase();
         });
     }
-    if(criterias.hasOwnProperty('date')){
-        // let availabilityRange = criterias[criteria].split(':').map(element => {
-        //     let [day, month, year] = element.split('-');
-        //     let date = `${month}-${day}-${year}`;
-        //     return Date.parse(date);
-        // });
-        // result = _.filter(data,function(element){
-        //     console.log(element['availability']);
-        //     return element[criteria] >= availabilityRange[0] && element[criteria] <= availabilityRange[1]; 
-        // });
-    }
+    // if(criterias.hasOwnProperty('date')){
+    // let availabilityRange = criterias[criteria].split(':').map(element => {
+    //     let [day, month, year] = element.split('-');
+    //     let date = `${month}-${day}-${year}`;
+    //     return Date.parse(date);
+    // });
+    // result = _.filter(data,function(element){
+    //     console.log(element['availability']);
+    //     return element[criteria] >= availabilityRange[0] && element[criteria] <= availabilityRange[1]; 
+    // });
+    // }
 
  
 
