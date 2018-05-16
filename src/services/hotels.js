@@ -2,7 +2,8 @@
 
 const axios = require('axios'),
     api = require('./../config/api'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    {filterByString} = require('../helpers/filtrationHelpers');
 
 const fetchHotels = async ()=>{
     let hotels = await axios({
@@ -19,9 +20,7 @@ const fetchHotels = async ()=>{
 const filterHotels = (data , criterias)=>{
     let result;
     if(criterias.hasOwnProperty('name')){
-        result = _.filter(data,(element)=>{
-            return element['name'].toLowerCase() === criterias['name'].toLowerCase();
-        });
+        result = filterByString (data,'name',criterias['name'].toLowerCase());
     }
     if(criterias.hasOwnProperty('price')){
         let priceRange = criterias['price'].split(':').map(element => {
@@ -32,9 +31,7 @@ const filterHotels = (data , criterias)=>{
         });
     }
     if(criterias.hasOwnProperty('city')){
-        result = _.filter(data,(element)=>{
-            return element['city'].toLowerCase() === criterias['city'].toLowerCase();
-        });
+        result = filterByString (data,'city',criterias['city'].toLowerCase());
     }
     // if(criterias.hasOwnProperty('date')){
     // let availabilityRange = criterias[criteria].split(':').map(element => {
