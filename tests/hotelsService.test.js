@@ -40,3 +40,24 @@ lab.experiment('Filter Hotels', function() {
 
     });
 });
+lab.experiment('Sort Hotels', function() {
+        
+    lab.test('Sort hotels by price', async function() {
+
+        let sortCriteria = 'price';
+
+        let result = hotelsService.sortHotels(hotelData,sortCriteria);
+
+        expect(parseFloat(result[0]['price']) <= parseFloat(result[1]['price']) <= parseFloat(result[2]['price']))
+            .to.equal(true);
+    });
+    lab.test('Sort hotels by name', async function() {
+
+        let sortCriteria = 'name';
+
+        let result = hotelsService.sortHotels(hotelData,sortCriteria);
+
+        expect(result[0]['name'] <= result[1]['name']).to.equal(true);
+    });
+    
+});
