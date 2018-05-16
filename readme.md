@@ -25,7 +25,7 @@ npm install && npm start
 - Get hotel details by price and city `http://localhost:3000/hotels?price=102.2&city=dubai`
 - Sort hotels by price `http://localhost:3009/hotels?sort_by=name`
 
-### Assumptions
+# Assumptions
 - If you searched a hotel by name (ex :`Dubai`) , the word Dubai will be converted to lowercase letters `dubai` (better user experience)
 - For price range , the first value shouldn't be greater than the second value .
 
