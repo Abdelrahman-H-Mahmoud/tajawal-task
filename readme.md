@@ -27,6 +27,7 @@ npm install && npm start
 
 ### Assumptions
 - If you searched a hotel by name (ex :`Dubai`) , the word Dubai will be converted to lowercase letters `dubai` (better user experience)
+- For price range , the first value shouldn't be greater than the second value .
 
 # Testing
 ```
