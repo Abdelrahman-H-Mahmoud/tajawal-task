@@ -38,4 +38,5 @@ npm test
 - [ ] Validation 
 - [ ] Date Range search (availability)
 - [ ] Adding Docker image for easier installation
+- [ ] Adding test coverage to codeclimate
 
