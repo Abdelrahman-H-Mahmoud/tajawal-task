@@ -34,7 +34,8 @@ npm install && npm start
 npm test
 ```
 # Todo
-- [ ] Add better error handling
+- [ ] Adding better error handling
 - [ ] Validation 
 - [ ] Date Range search (availability)
+- [ ] Adding Docker image for easier installation
 
