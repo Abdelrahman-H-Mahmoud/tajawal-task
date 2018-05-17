@@ -3,7 +3,7 @@
 const axios = require('axios'),
     api = require('./../config/api'),
     _ = require('lodash'),
-    {filterByString} = require('../helpers/filtrationHelpers');
+    {filterByString,parseStringDateToDate} = require('../helpers/filtrationHelpers');
 
 const fetchHotels = async ()=>{
     let hotels = await axios({
@@ -19,6 +19,7 @@ const fetchHotels = async ()=>{
 
 const filterHotels = (data , criterias)=>{
     let result;
+
     if(criterias.hasOwnProperty('name')){
         result = filterByString (data,'name',criterias['name'].toLowerCase());
     }
@@ -33,20 +34,29 @@ const filterHotels = (data , criterias)=>{
     if(criterias.hasOwnProperty('city')){
         result = filterByString (data,'city',criterias['city'].toLowerCase());
     }
-    // if(criterias.hasOwnProperty('date')){
-    // let availabilityRange = criterias[criteria].split(':').map(element => {
-    //     let [day, month, year] = element.split('-');
-    //     let date = `${month}-${day}-${year}`;
-    //     return Date.parse(date);
-    // });
-    // result = _.filter(data,function(element){
-    //     console.log(element['availability']);
-    //     return element[criteria] >= availabilityRange[0] && element[criteria] <= availabilityRange[1]; 
-    // });
-    // }
-
- 
-
+    if(criterias.hasOwnProperty('date')){
+        let availabilityRange = criterias['date'].split(':').map(element => {
+            return parseStringDateToDate(element);
+        });
+        data.forEach(element => {
+            element['availability'].forEach(range => {
+                let from = parseStringDateToDate(range['from']);
+                let to = parseStringDateToDate(range['to']);
+                if(from <= availabilityRange[0]){
+                    if(to >=availabilityRange[1]){
+                        console.log('available');
+                    }
+                    else{
+                        console.log('not available');
+                    }
+                }
+                else{
+                    console.log('available');
+                }
+            });
+        });
+        return data;
+    }
     return result;
 
 };

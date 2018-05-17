@@ -7,6 +7,12 @@ const filterByString = (data ,searchKey,searchValue)=>{
     });
 };
 
+const parseStringDateToDate = (str)=>{
+    let dateArray = str.split('-');
+    return Date.parse(`${dateArray[1]}-${dateArray[0]}-${dateArray[2]}`);
+};
+
 module.exports={
-    filterByString
+    filterByString,
+    parseStringDateToDate
 };
