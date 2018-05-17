@@ -3,7 +3,7 @@
 const axios = require('axios'),
     api = require('./../config/api'),
     _ = require('lodash'),
-    {filterByString,parseStringDateToDate} = require('../helpers/filtrationHelpers');
+    {filterByString,filterByPrice,filterByDate} = require('../helpers/filtrationHelpers');
 
 const fetchHotels = async ()=>{
     let hotels = await axios({
@@ -18,35 +18,19 @@ const fetchHotels = async ()=>{
 };
 
 const filterHotels = (data , criterias)=>{
-    let result;
+    let result = data;
 
     if(criterias.hasOwnProperty('name')){
-        result = filterByString (data,'name',criterias['name'].toLowerCase());
+        result = filterByString (result,'name',criterias['name'].toLowerCase());
     }
     if(criterias.hasOwnProperty('price')){
-        let priceRange = criterias['price'].split(':').map(element => {
-            return parseFloat (element);
-        });
-        result = _.filter(data,function(element){
-            return element['price'] >= priceRange[0] && element['price'] <= priceRange[1]; 
-        });
+        result = filterByPrice (result,criterias['price']);
     }
     if(criterias.hasOwnProperty('city')){
-        result = filterByString (data,'city',criterias['city'].toLowerCase());
+        result = filterByString (result,'city',criterias['city'].toLowerCase());
     }
     if(criterias.hasOwnProperty('date')){
-        let availabilityRange = criterias['date'].split(':').map(element => {
-            return parseStringDateToDate(element);
-        });
-        
-        data.forEach(element => {
-            element['availability'] = element['availability'].filter(range => {
-                let from = parseStringDateToDate(range['from']);
-                let to = parseStringDateToDate(range['to']);
-                return from <= availabilityRange[0] && to >= availabilityRange[1];
-            });
-        });
-        result = data;
+        result = filterByDate (result,criterias['date']);
     }
     return result;
 
