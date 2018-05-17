@@ -1,7 +1,7 @@
 {
   "name": "tajawal-task",
   "version": "1.0.0",
-  "description": "",
+  "description": "fetch hotels data from Tajawal api and apply search and sorting on this data .",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
