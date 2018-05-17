@@ -38,24 +38,15 @@ const filterHotels = (data , criterias)=>{
         let availabilityRange = criterias['date'].split(':').map(element => {
             return parseStringDateToDate(element);
         });
+        
         data.forEach(element => {
-            element['availability'].forEach(range => {
+            element['availability'] = element['availability'].filter(range => {
                 let from = parseStringDateToDate(range['from']);
                 let to = parseStringDateToDate(range['to']);
-                if(from <= availabilityRange[0]){
-                    if(to >=availabilityRange[1]){
-                        console.log('available');
-                    }
-                    else{
-                        console.log('not available');
-                    }
-                }
-                else{
-                    console.log('available');
-                }
+                return from <= availabilityRange[0] && to >= availabilityRange[1];
             });
         });
-        return data;
+        result = data;
     }
     return result;
 
